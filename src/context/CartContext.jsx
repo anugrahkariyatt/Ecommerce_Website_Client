@@ -10,13 +10,17 @@ export const CartProvider = ({ children }) => {
   const [isCart, setIsCart] = useState(null);
 
   const setRole = (user) => {
-    setUserRole(user.role);
+    if (user && user.role) {
+      setUserRole(user.role);
+    } else {
+      setUserRole(null);
+    }
     console.log(">>>>>", user);
   };
   useEffect(() => {
     if (!userRole) {
       const user = JSON.parse(localStorage.getItem("credentials"));
-      setRole(user);
+      if (user) setRole(user);
     }
   }, [userRole]);
   const setIsCartPage = (c) => {

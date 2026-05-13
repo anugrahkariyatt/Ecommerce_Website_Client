@@ -13,7 +13,6 @@ const Login = () => {
   //     }
   // ]
 
-  const [user, setUser] = useState(null);
   const { setRole } = useCart();
 
   useEffect(() => {
@@ -43,19 +42,18 @@ const Login = () => {
         }}
         validationSchema={validationSchema}
         onSubmit={(values) => {
-          // const user = JSON.parse(localStorage.getItem("credentials"));
-
-          if (!user) {
+          const storedUser = JSON.parse(localStorage.getItem("credentials"));
+          if (!storedUser) {
             console.log("No user found");
             return;
           }
           if (
-            user.email === values.email &&
-            user.password === values.password &&
-            user.role === values.role
+            storedUser.email === values.email &&
+            storedUser.password === values.password &&
+            storedUser.role === values.role
           ) {
             navigate("/home");
-            setRole(user);
+            setRole(storedUser);
           } else {
             console.log("Invalid details");
           }
