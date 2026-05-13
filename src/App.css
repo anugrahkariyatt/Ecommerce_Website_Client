@@ -1,0 +1,89 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  --bg: #ffffff;
+  --card-bg: #ffffff;
+  --text: #000000;
+}
+
+body.dark {
+  --bg: #121212;
+  --card-bg: #1e1e1e;
+  --text: #ffffff;
+}
+
+html,
+body {
+  background-color: var(--bg) !important;
+  color: var(--text);
+  min-height: 100%;
+  margin: 0;
+}
+
+main {
+  background-color: var(--bg);
+  width: 100%;
+  display: block;
+}
+
+.card {
+  background-color: var(--card-bg) !important;
+  color: var(--text) !important;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark p,
+body.dark .text-muted {
+  color: #d1d1d1 !important;
+}
+
+body.dark h2 {
+  color: #ffffff;
+}
+
+body.dark .navbar {
+  background-color: #1a1a1a !important;
+  border-bottom: 1px solid #333 !important;
+}
+
+body.dark .navbar .navbar-brand,
+body.dark .navbar .nav-link {
+  color: #ffffff !important;
+}
+
+.sidebar-theme {
+  background-color: var(--card-bg) !important;
+  color: var(--text);
+  transition: 0.3s ease;
+}
+
+body.dark .form-control {
+  background-color: #2b2b2b !important;
+  color: #ffffff !important;
+  border-color: #444;
+}
+
+body.dark label,
+body.dark .text-muted {
+  color: #d1d1d1 !important;
+}
+
+body.dark .btn-close {
+  background-color: white;
+}
+
+@media (min-width: 768px) {
+  .description {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 992px) {
+  .description {
+    font-size: 20px;
+  }
+}
